@@ -1,0 +1,93 @@
+﻿<Window x:Class="oop_lab11_part2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:oop_lab11_part2"
+        mc:Ignorable="d"
+        Title="Практична робота 11.2" Height="500" Width="800" MinHeight="500" MinWidth="800" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        
+        <Style x:Key="LabelStyle" TargetType="{x:Type Label}">
+            <Setter Property="FontFamily" Value="Comic Sans MS" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+
+        <Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Content" Value="Перевірити"/>
+            <Setter Property="Margin" Value="10, 12, 10, 5"/>
+        </Style>
+
+        <Style x:Key="TextBoxStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Width" Value="140"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Text" Value=" "/>
+            <Setter Property="Margin" Value="10, 12, 10, 5"/>
+        </Style>
+
+    </Window.Resources>
+    <Grid Background="WhiteSmoke">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="120"></ColumnDefinition>
+            <ColumnDefinition MinWidth="150"></ColumnDefinition>
+            <ColumnDefinition MinWidth="110"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="300"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label x:Name="labelTitle" Content="Демонстрація роботи з регулярними виразами" FontSize="20" FontFamily="Comic Sans MS"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="0"  VerticalAlignment="Center" HorizontalAlignment="Right">
+            <Label x:Name="labelPhoneNumber" Style="{StaticResource LabelStyle}" HorizontalAlignment="Right" Content="Номер телефону: "/>
+            <Label x:Name="labelPassportNumber" Style="{StaticResource LabelStyle}" HorizontalAlignment="Right" Content="Номер паспорта: "/>
+            <Label x:Name="labelIntervalNumber" Style="{StaticResource LabelStyle}" HorizontalAlignment="Right" Content="Число з інтеревалу: &#10;[10311;89645]"/>
+            <Label x:Name="labelUkrainianName" Style="{StaticResource LabelStyle}" HorizontalAlignment="Right" Content="Українське ім'я: "/>
+            <Label x:Name="labelTime" Style="{StaticResource LabelStyle}" HorizontalAlignment="Right" Content="Введіть час: "/>
+            <Label x:Name="labelEmail" Style="{StaticResource LabelStyle}" HorizontalAlignment="Right" Content="E-mail:"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" >
+            <TextBox x:Name="textBoxPhoneNumber" Style="{StaticResource TextBoxStyle}"/>
+            <TextBox x:Name="textBoxPassportNumber" Style="{StaticResource TextBoxStyle}" />
+            <TextBox x:Name="textBoxIntervalNumber" Style="{StaticResource TextBoxStyle}" />
+            <TextBox x:Name="textBoxUkrainianName" Style="{StaticResource TextBoxStyle}" />
+            <TextBox x:Name="textBoxTime" Style="{StaticResource TextBoxStyle}" />
+            <TextBox x:Name="textBoxEmail" Style="{StaticResource TextBoxStyle}" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button x:Name="buttonPhoneNumber" Click="buttonPhoneNumber_Click" Style="{StaticResource ButtonStyle}"/>
+            <Button x:Name="buttonPassportNumber" Click="buttonPassportNumber_Click" Style="{StaticResource ButtonStyle}"/>
+            <Button x:Name="buttonIntervalNumber" Click="buttonIntervalNumber_Click" Style="{StaticResource ButtonStyle}"/>
+            <Button x:Name="buttonUkrainianName" Click="buttonUkrainianName_Click" Style="{StaticResource ButtonStyle}"/>
+            <Button x:Name="buttonTime" Click="buttonTime_Click" Style="{StaticResource ButtonStyle}"/>
+            <Button x:Name="buttonEmail" Click="buttonEmail_Click" Style="{StaticResource ButtonStyle}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <Label x:Name="labelCheckPhoneNumber" Style="{StaticResource LabelStyle}" Content="Результат"/>
+            <Label x:Name="labelCheckPassportNumber" Style="{StaticResource LabelStyle}" Content="Результат"/>
+            <Label x:Name="labelCheckIntervalNumber" Style="{StaticResource LabelStyle}" Content="Результат"/>
+            <Label x:Name="labelCheckUkrainianName" Style="{StaticResource LabelStyle}" Content="Результат"/>
+            <Label x:Name="labelCheckTime" Style="{StaticResource LabelStyle}" Content="Результат"/>
+            <Label x:Name="labelCheckEmail" Style="{StaticResource LabelStyle}" Content="Результат"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+    </Grid>
+</Window>

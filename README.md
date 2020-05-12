@@ -1,1 +1,1 @@
-# lab-11
+# lab-11 by Hryhortsev Andrii
